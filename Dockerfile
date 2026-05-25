@@ -2,7 +2,7 @@ FROM golang:latest AS golang-stage
 
 WORKDIR /app
 
-RUN wget https://raw.githubusercontent.com/buildbarn/bb-remote-execution/96c4fdce659fabfaba7ee2a60fd4e2ffab8352e2/cmd/fake_python/main.go
+RUN wget https://raw.githubusercontent.com/buildbarn/bb-remote-execution/b0dbe607fbb71bdad655f61afa2f4031c3e907ec/cmd/fake_python/main.go
 
 RUN go mod init fake_python \
     && CGO_ENABLED=0 GOOS=linux go build -ldflags="-s -w" -o fake_python
